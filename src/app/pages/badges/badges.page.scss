@@ -1,0 +1,18 @@
+ion-item.not-acquired {
+    h3, p {
+        color: lightgrey !important;
+    }
+
+    img {
+        filter: grayscale(100) !important;
+    }
+
+    .badge-image {
+        background-color: #ffffff !important;
+    }
+}
+
+.badge-image {
+    border-radius: 33px;
+    padding: 2px;
+}

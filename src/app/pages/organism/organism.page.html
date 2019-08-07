@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary"> 
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Dier</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card *ngIf="organism$ | async as organism">
+        <ion-card-header>
+          <ion-card-subtitle>{{ organism.name }}</ion-card-subtitle>
+            <img src="{{ organism.image | resizeImgur:'h' }}"/>
+            <ion-text>
+                &copy; Natuurmonumenten
+            </ion-text>
+          <ion-card-title>{{ organism.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-text [innerHTML]="organism.description">
+          </ion-text>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

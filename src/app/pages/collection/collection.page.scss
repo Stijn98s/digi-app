@@ -1,0 +1,16 @@
+ion-item.not-acquired {
+    h3 {
+        color: gray !important;
+    } 
+    p {
+        column-rule: lightgrey !important;
+    }
+
+    img {
+        filter: grayscale(100) !important;
+    }
+
+    .badge-image {
+        background-color: #ffffff !important;
+    }
+}

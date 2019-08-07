@@ -1,0 +1,78 @@
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  z-index: 99999;
+
+  opacity: 0;
+  -webkit-animation: flash linear .1s;
+  animation: flash linear .1s;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.lens {
+  width: 70px;
+  height: 70px;
+  background: #000000;
+  position: absolute;
+  z-index: 400;
+  bottom: 20px;
+  right: 40px;
+  border-radius: 100%;
+  border: 3px solid #E5E5E5;
+  box-shadow: inset 0 .02em 0 #5C5C5C;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    top: 7px;
+    right: 7px;
+    z-index: 6;
+    text-align: center;
+    border-radius: 100%;
+  }
+}
+
+.catchImage {
+  position: relative;
+}
+
+.imageButton {
+  position: absolute;
+  margin: 0;
+  left: 37.5%;
+  bottom: 10%;
+}
+
+#scratch {
+  position: absolute;
+  z-index: 40;
+}
+
+.animalImage {
+  background-image: url('../../../assets/img/catch_background.jpg');
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+}

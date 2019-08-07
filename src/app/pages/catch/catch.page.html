@@ -1,0 +1,7 @@
+<ion-content>
+    <div id="scratch" [className]="flash"></div>
+    <div [className]="background" *ngIf="organism$ | async as organism">
+        <ion-img class="animalImage" src="{{ organism.image | resizeImgur:'h'}}"></ion-img>
+        <button (click)="onCaughtAction(organism)" [className]="lens"></button>
+    </div>
+</ion-content>

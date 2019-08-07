@@ -1,0 +1,25 @@
+<ion-content *ngIf="player$ | async as player">
+  <div class="background">
+    <img src="/assets/img/profile_background.png" alt="">
+    <img src="/assets/img/profile_background.png" alt="">
+  </div>
+  <div class="profile-header">
+    <div class="avatar" *ngIf="player.image">
+      <img src="{{ player.image }}" alt="friend-avatar">
+    </div>
+    <div class="name">{{ player.name }}</div>
+    <div class="name">{{ player.points }} punten</div>
+  </div>
+  <div class="profile-content">
+    <div class="badge-list">
+      <div class="badge"><div class="wrapper"><img src="https://www.freeiconspng.com/uploads/leaderboard-trophy-icon-32.png" alt=""></div></div>
+      <div class="badge"><div class="wrapper"><img src="https://www.freeiconspng.com/uploads/leaderboard-trophy-icon-32.png" alt=""></div></div>
+      <div class="badge"><div class="wrapper"><img src="https://www.freeiconspng.com/uploads/leaderboard-trophy-icon-32.png" alt=""></div></div>
+      <div class="badge"><div class="wrapper"><img src="https://www.freeiconspng.com/uploads/leaderboard-trophy-icon-32.png" alt=""></div></div>
+      <div class="badge"><div class="wrapper"><img src="https://www.freeiconspng.com/uploads/leaderboard-trophy-icon-32.png" alt=""></div></div>
+      <div class="badge"><div class="wrapper"><img src="https://www.freeiconspng.com/uploads/leaderboard-trophy-icon-32.png" alt=""></div></div>
+      <div class="badge"><div class="wrapper"><img src="https://www.freeiconspng.com/uploads/leaderboard-trophy-icon-32.png" alt=""></div></div>
+      <div class="badge"><div class="wrapper"><img src="https://www.freeiconspng.com/uploads/leaderboard-trophy-icon-32.png" alt=""></div></div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary"> 
+      <ion-buttons slot="start">
+          <ion-back-button routerLink="/map" routerDirection="back"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Mijn Verzameling</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <!-- caught organisms -->
+    <ion-item *ngFor="let caughtOrganism of caughtOrganisms$ | async" routerLink="/organism/{{ caughtOrganism.name }}" detail>
+      <ion-avatar slot="start"> 
+          <img src="{{ caughtOrganism.image | resizeImgur:'t' }}"/>
+      </ion-avatar>
+      <ion-label text-wrap>
+          <h3>{{ caughtOrganism.name }}</h3>
+          <p>{{ caughtOrganism.timesCaught }} gevangen</p>
+      </ion-label>
+      <ion-badge color="success"> 
+        {{ caughtOrganism.timesCaught }}
+      </ion-badge>
+    </ion-item>
+    <!-- Uncaught organisms -->
+    <ion-item *ngFor="let organism of unCaughtOrganisms$ | async" class="not-acquired" >
+      <ion-avatar slot="start"> 
+          <img  *ngIf="organism.image" src="{{ organism.image | resizeImgur:'t'}}"/>
+      </ion-avatar>
+      <ion-label text-wrap>
+          <h3>{{ organism.name }}</h3>
+          <p>{{ organism.description | truncateText:45 }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

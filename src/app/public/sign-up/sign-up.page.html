@@ -1,0 +1,27 @@
+
+<ion-content class="login-content" padding>
+    <ion-grid style="height: 100%" fixed>
+        <ion-row class="logo-row">
+            <ion-col></ion-col>
+            <ion-col>
+                <img src="/assets/img/logo_large.png">
+                <h2 class="title">DigiCatch</h2>
+            </ion-col>
+            <ion-col></ion-col>
+        </ion-row>
+        <ion-row style="bottom: 0px;" align-items-center>
+            <ion-col>
+                <form [formGroup]="signUpFg" (ngSubmit)="signUp()" >
+                    <ion-list inset>
+                        <ion-item>
+                            <ion-input type="text" placeholder="Gebruikersnaam" name="username" formControlName="username"
+                                       required></ion-input>
+                        </ion-item>
+                        <ion-button [disabled]="!signUpFg.valid" type="submit">Registreren</ion-button>
+                    </ion-list>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+

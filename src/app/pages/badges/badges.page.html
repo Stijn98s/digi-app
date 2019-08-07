@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>Mijn Badges</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let badge of tags$ | async" [ngClass]="badge.toCatch.length === badge.caught.length ? 'acquired' : 'not-acquired'" >
+      <ion-thumbnail slot="start">
+        <img class="badge-image"
+        src="https://cdn3.iconfinder.com/data/icons/back-to-school-12/30/school_object_study_student-5-512.png" 
+        [ngStyle]="{'background-color': badge.tag.color}">
+      </ion-thumbnail>
+      <ion-label text-wrap>
+        <h3>{{ badge.tag.name }}</h3>
+        <p>{{ badge.tag.description }}</p>
+        <p>Nog te vangen: {{ badge.notCaught }}</p>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

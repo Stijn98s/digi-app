@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/map"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Settings</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="settingsForm" >
+        <ion-list>
+            <ion-item lines="none">
+                <ion-avatar (click)="presentPopover($event)" class="avatars">
+                    <img src="{{profilePic$ | async}}">
+                </ion-avatar>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label>Gebruikersnaam</ion-label>
+                <ion-badge color="light">{{userName$ | async}}</ion-badge>
+            </ion-item>
+            <ion-item lines="none" *ngIf="daysPlayed$ | async as daysPlayed">
+                <ion-label>Dagen gebruikt</ion-label>
+                <ion-badge color="light">{{daysPlayed }} dag{{daysPlayed < 1 ? "en" : '' }}</ion-badge>
+            </ion-item>
+            <ion-item lines="full">
+                <ion-text color="black">
+                    <h2>Gebied</h2>
+                </ion-text>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label>huidig gebied</ion-label>
+                <ion-badge color="light">{{areaName$ | async}}</ion-badge>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label>verlaat huidig gebied</ion-label>
+                <ion-button (click)="leaveArea()">verlaat</ion-button>
+            </ion-item>
+            <ion-item lines="full">
+                <ion-text color="black">
+                    <h2>Volume</h2>
+                </ion-text>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label>Aan/uit</ion-label>
+                <ion-toggle formControlName="volumeOn"></ion-toggle>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>

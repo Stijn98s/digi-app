@@ -1,0 +1,9 @@
+<ion-app>
+  <ion-router-outlet main></ion-router-outlet>
+  
+  <ion-fab *ngIf="!pageIsLogin" vertical="bottom" horizontal="right" class="half-circle-bottom">
+      <ion-fab-button translucent="true" class="homebutton" routerLink="/map" routerDirection="root">
+        <ion-icon name="compass" size="large"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+</ion-app>

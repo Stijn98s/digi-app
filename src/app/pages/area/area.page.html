@@ -1,0 +1,18 @@
+<ion-header >
+    <ion-toolbar color="secondary">
+        <ion-title>
+          Gebieden
+        </ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <ion-list-header>
+     <h3> Kies een gebied </h3>
+    </ion-list-header>
+    <ion-item *ngFor="let area of areas$ | async" (click)="clickArea(area)" detail="true">
+      <ion-label>{{ area.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

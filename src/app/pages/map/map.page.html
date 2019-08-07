@@ -1,0 +1,37 @@
+<ion-header>
+    <link href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" rel="stylesheet">
+</ion-header>
+
+<ion-content>
+    <!-- Fixed Floating Action Button that does not scroll with the content -->
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button color="primary">
+        <ion-avatar>
+          <img src="{{profilePic$ | async}}">
+        </ion-avatar>
+      </ion-fab-button>
+      <ion-fab-list>
+        <ion-fab-button routerLink="/badges/" routerDirection="forward"><ion-icon name="ribbon"></ion-icon></ion-fab-button>
+        <ion-fab-button routerLink="/collection/" routerDirection="forward"><ion-icon name="paw"></ion-icon></ion-fab-button>
+        <ion-fab-button routerLink="/friend-collection/" routerDirection="forward"><ion-icon name="contacts"></ion-icon></ion-fab-button>
+        <ion-fab-button routerLink="/settings/" routerDirection="forward"><ion-icon name="settings"></ion-icon></ion-fab-button>
+        <ion-fab-button routerLink="/home/" routerDirection="forward"><ion-icon name="help"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+  </ion-fab>
+  <ion-fab vertical="top" horizontal="start">
+      <ion-chip color="primary" class="points-left">
+        <ion-label><span class="points">{{ score$ | async }}</span> punten</ion-label>
+      </ion-chip>
+      <div *ngIf="degreesToDestination$ | async as degrees" id="compass">
+          <div  class="device-orientation" >
+              <img [src]="'/assets/img/arrow.png'" [style.transform]="'rotate(' + (degrees) + 'deg)'" />
+          </div>
+      </div>
+
+  </ion-fab>
+
+  <div id="map"></div>
+    <app-catch-button *ngIf="currentCatchzone$ | async as catchZone" [catchZone]="catchZone" id="catch-button"></app-catch-button>
+
+
+</ion-content>
